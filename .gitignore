@@ -3,7 +3,6 @@ dist/
 dist-ssr/
 *.local
 *.tsbuildinfo
-client/package-lock.json
 server/package-lock.json
 .env
 .DS_Store
