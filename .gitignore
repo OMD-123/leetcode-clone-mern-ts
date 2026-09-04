@@ -1,6 +1,10 @@
 node_modules/
 dist/
+dist-ssr/
+*.local
+*.tsbuildinfo
+client/package-lock.json
+server/package-lock.json
 .env
-*.log
 .DS_Store
 Thumbs.db
