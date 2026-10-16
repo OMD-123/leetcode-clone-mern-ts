@@ -11,6 +11,8 @@ export default function ProblemsPage() {
   const [activeFilter, setActiveFilter] = useState<'All' | 'Easy' | 'Medium' | 'Hard'>('All');
   const [solveOpen, setSolveOpen] = useState(false);
 
+  const exampleCurl = `curl -X POST http://localhost:5000/api/problems -H 'Content-Type: application/json' -d '{"title": "Two Sum", "description": "Given an array and a target, return indices...", "difficulty": "Easy", "category": "Arrays", "starterCode": "function solve(input) { ... }", "testCases": [{"input": "{}", "expected": "[]" }]}'`;
+
   useEffect(() => {
     api.getProblems()
       .then(setProblems)
@@ -85,16 +87,7 @@ export default function ProblemsPage() {
             <h3>No Problems Yet</h3>
             <p>The problem database is empty. You can add problems via the server API.</p>
             <div className="curl-example">
-              <code>
-                curl -X POST http://localhost:5000/api/problems -H 'Content-Type: application/json' -d '{
-                  "title": "Two Sum",
-                  "description": "Given an array and a target, return indices...",
-                  "difficulty": "Easy",
-                  "category": "Arrays",
-                  "starterCode": "function solve(input) { ... }",
-                  "testCases": [{ "input": "{}", "expected": "[]" }]
-                }'
-              </code>
+              <code>{exampleCurl}</code>
             </div>
           </div>
         </div>
